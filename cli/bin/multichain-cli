@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+if (defined('HHVM_VERSION_ID')) {
+    if (HHVM_VERSION_ID < 30500) {
+        fwrite(STDERR, "HHVM needs to be a minimum version of HHVM 3.5.0\n");
+        exit(1);
+    }
+} elseif (!defined('PHP_VERSION_ID') || PHP_VERSION_ID < 50400) {
+    fwrite(STDERR, "PHP needs to be a minimum version of PHP 5.4.0\n");
+    exit(1);
+}
+if (file_exists($a = __DIR__.'/../../../autoload.php')) {
+    require_once $a;
+} else {
+    require_once __DIR__.'/../vendor/autoload.php';
+}
+(new Multichain\Console\Application())->run();

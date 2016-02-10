@@ -1,0 +1,28 @@
+{
+    "name": "kunstmaan/multichain-cli",
+    "type": "application",
+    "description": "Demo CLI commands to demonstrate Multichain",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roderik van der Veer",
+            "email": "roderik.van.der.veer@kunstmaan.be"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "symfony/console": "^3.0",
+        "kunstmaan/libphp-multichain": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Multichain\\": "src/Multichain/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "bin": ["bin/multichain-cli"]
+}

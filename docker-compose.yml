@@ -1,0 +1,16 @@
+masternode:
+    image: kunstmaan/master-multichain
+    expose:
+        - "7447"
+    ports:
+        - "8000:8000"
+
+slavenode1:
+    image: kunstmaan/node-multichain
+    links:
+        - masternode
+
+slavenode2:
+    image: kunstmaan/node-multichain
+    links:
+        - masternode
