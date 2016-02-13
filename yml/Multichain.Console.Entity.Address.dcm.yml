@@ -1,0 +1,17 @@
+Multichain\Console\Entity\Address:
+  type: entity
+  table: addresses
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    address:
+      type: string
+      length: 100
+      unique: true
+    kycname:
+      type: string
+      length: 100
+      unique: true

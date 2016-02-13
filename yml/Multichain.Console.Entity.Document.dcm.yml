@@ -1,0 +1,18 @@
+Multichain\Console\Entity\Document:
+  type: entity
+  table: documents
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    hash:
+      type: string
+      length: 100
+    content:
+      type: blob
+    hex:
+      type: string
+      length: 100
+      nullable: true

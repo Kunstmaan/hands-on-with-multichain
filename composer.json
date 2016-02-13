@@ -9,10 +9,19 @@
             "email": "roderik.van.der.veer@kunstmaan.be"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/roderik/JsonRPC.git"
+        }
+    ],
     "require": {
         "php": ">=7.0",
         "symfony/console": "^3.0",
-        "kunstmaan/libphp-multichain": "dev-master"
+        "kunstmaan/libphp-multichain": "dev-master",
+        "fguillot/json-rpc": "dev-master",
+        "doctrine/orm": "^2.5",
+        "symfony/yaml": "^3.0"
     },
     "autoload": {
         "psr-4": {
@@ -24,5 +33,8 @@
             "dev-master": "1.0-dev"
         }
     },
-    "bin": ["bin/multichain-cli"]
+    "bin": ["bin/multichain-cli"],
+    "config": {
+        "bin-dir": "./bin"
+    }
 }

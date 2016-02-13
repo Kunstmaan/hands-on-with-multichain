@@ -20,7 +20,15 @@ class Application extends BaseApplication
     public function __construct()
     {
         parent::__construct('Multichain CLI', Application::VERSION);
-        $this->add(new Command\CreateAccountCommand());
+        $this->add(new Command\CreateAddressCommand());
+        $this->add(new Command\IssueAssetCommand());
+        $this->add(new Command\ListAssetsCommand());
+        $this->add(new Command\ListAddressesCommand());
+        $this->add(new Command\SendCommand());
+        $this->add(new Command\ListTransactionsCommand());
+        $this->add(new Command\ExchangeCommand());
+        $this->add(new Command\RegisterDocumentCommand());
+        $this->add(new Command\ValidateDocumentCommand());
     }
 
     public function getHelp()
