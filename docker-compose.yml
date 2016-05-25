@@ -3,35 +3,59 @@ version: '2'
 services:
     masternode:
         image: kunstmaan/master-multichain
+        stdin_open: true
+        tty: true
         ports:
             - "7447:7447"
             - "8000:8000"
+        expose:
+            - 7447
+            - 8000
         environment:
-            VIRTUAL_HOST: mulichain-master.docker
-            VIRTUAL_PORT: 8000
-    explorer:
-        image: kunstmaan/explorer-multichain
-        depends_on:
-            - masternode
-        ports:
-            - "2750:2750"
-        environment:
-            VIRTUAL_HOST: multichain-explorer.docker
-            VIRTUAL_PORT: 2750
-        links:
-            - masternode
+            CHAINNAME: MyChain
+            NETWORK_PORT: 7447
+            RPC_PORT: 8000
+            RPC_USER: multichainrpc
+            RPC_PASSWORD: this-is-insecure-change-it
+            RPC_ALLOW_IP: 0.0.0.0/0.0.0.0
+            PARAM_ANYONE_CAN_RECEIVE: anyone-can-receive|true
+            PARAM_ANYONE_CAN_SEND: anyone-can-send|true
+            PARAM_ANYONE_CAN_ISSUE: anyone-can-issue|true
+            PARAM_ANYONE_CAN_CONNECT: anyone-can-connect|true
+            PARAM_ANYONE_CAN_MINE: anyone-can-mine|true
+    slavenode:
+        image: kunstmaan/node-multichain
         stdin_open: true
         tty: true
-    slavenode1:
-        image: kunstmaan/node-multichain
-        depends_on:
-            - masternode
+        expose:
+            - 7447
+            - 8000
+        environment:
+            CHAINNAME: MyChain
+            NETWORK_PORT: 7447
+            RPC_PORT: 8000
+            RPC_USER: multichainrpc
+            RPC_PASSWORD: this-is-insecure-change-it
+            RPC_ALLOW_IP: 0.0.0.0/0.0.0.0
+            MASTER_NODE: masternode
         links:
             - masternode
-    slavenode2:
-        image: kunstmaan/node-multichain
-        depends_on:
-            - masternode
+    explorernode:
+        image: kunstmaan/explorer-multichain
+        stdin_open: true
+        tty: true
+        expose:
+            - 2750
+            - 7447
+            - 8000
+        environment:
+            CHAINNAME: MyChain
+            NETWORK_PORT: 7447
+            RPC_PORT: 8000
+            RPC_USER: multichainrpc
+            RPC_PASSWORD: this-is-insecure-change-it
+            RPC_ALLOW_IP: 0.0.0.0/0.0.0.0
+            MASTER_NODE: masternode
         links:
             - masternode
     mysql:

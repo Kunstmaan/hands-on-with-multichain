@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7a820a279cedd4dd412a9136298628b8",
-    "content-hash": "3e9b7030ab1656c75868fe90237f6de5",
+    "hash": "0f5fadcb1466d9e91a8dbc137a4b90fb",
+    "content-hash": "a9aa42df81f2babd97aaad80f199bc88",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -608,16 +608,16 @@
         },
         {
             "name": "fguillot/json-rpc",
-            "version": "dev-master",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/roderik/JsonRPC.git",
-                "reference": "ccf7f3f7098e900233511d68d96128abc15b02aa"
+                "url": "https://github.com/fguillot/JsonRPC.git",
+                "reference": "e915dab71940e7ac251955c785570048f460d332"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roderik/JsonRPC/zipball/ccf7f3f7098e900233511d68d96128abc15b02aa",
-                "reference": "ccf7f3f7098e900233511d68d96128abc15b02aa",
+                "url": "https://api.github.com/repos/fguillot/JsonRPC/zipball/e915dab71940e7ac251955c785570048f460d332",
+                "reference": "e915dab71940e7ac251955c785570048f460d332",
                 "shasum": ""
             },
             "require": {
@@ -629,6 +629,7 @@
                     "JsonRPC": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -639,10 +640,7 @@
             ],
             "description": "Simple Json-RPC client/server library that just works",
             "homepage": "https://github.com/fguillot/JsonRPC",
-            "support": {
-                "source": "https://github.com/roderik/JsonRPC/tree/master"
-            },
-            "time": "2016-02-11 15:57:55"
+            "time": "2016-04-27 02:48:10"
         },
         {
             "name": "kunstmaan/libphp-multichain",
@@ -650,16 +648,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/libphp-multichain.git",
-                "reference": "1029b685e3597053953ce4de702e6571bc18be59"
+                "reference": "a1864b896b324debc814655aa6acabb0258eace4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kunstmaan/libphp-multichain/zipball/1029b685e3597053953ce4de702e6571bc18be59",
-                "reference": "1029b685e3597053953ce4de702e6571bc18be59",
+                "url": "https://api.github.com/repos/Kunstmaan/libphp-multichain/zipball/a1864b896b324debc814655aa6acabb0258eace4",
+                "reference": "a1864b896b324debc814655aa6acabb0258eace4",
                 "shasum": ""
             },
             "require": {
-                "fguillot/json-rpc": "@stable",
+                "fguillot/json-rpc": "~v1.1.0",
                 "php": ">=5.4.0"
             },
             "require-dev": {
@@ -676,20 +674,20 @@
                 "MIT"
             ],
             "description": "Unofficial PHP library for interacting with the Multichain JsonRPC interface",
-            "time": "2016-02-08 14:39:51"
+            "time": "2016-05-25 19:23:36"
         },
         {
             "name": "symfony/console",
-            "version": "v3.0.4",
+            "version": "v3.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "6b1175135bc2a74c08a28d89761272de8beed8cd"
+                "reference": "34a214710e0714b6efcf40ba3cd1e31373a97820"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/6b1175135bc2a74c08a28d89761272de8beed8cd",
-                "reference": "6b1175135bc2a74c08a28d89761272de8beed8cd",
+                "url": "https://api.github.com/repos/symfony/console/zipball/34a214710e0714b6efcf40ba3cd1e31373a97820",
+                "reference": "34a214710e0714b6efcf40ba3cd1e31373a97820",
                 "shasum": ""
             },
             "require": {
@@ -736,20 +734,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-16 17:00:50"
+            "time": "2016-04-28 09:48:42"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.1.1",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "1289d16209491b584839022f29257ad859b8532d"
+                "reference": "dff51f72b0706335131b00a7f49606168c582594"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/1289d16209491b584839022f29257ad859b8532d",
-                "reference": "1289d16209491b584839022f29257ad859b8532d",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/dff51f72b0706335131b00a7f49606168c582594",
+                "reference": "dff51f72b0706335131b00a7f49606168c582594",
                 "shasum": ""
             },
             "require": {
@@ -761,7 +759,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -795,11 +793,11 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-01-20 09:13:37"
+            "time": "2016-05-18 14:26:46"
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.4",
+            "version": "v3.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
@@ -851,8 +849,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "kunstmaan/libphp-multichain": 20,
-        "fguillot/json-rpc": 20
+        "kunstmaan/libphp-multichain": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
