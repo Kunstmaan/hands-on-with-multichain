@@ -9,7 +9,7 @@ $dbParams = array(
     'user'     => 'blockchain',
     'password' => 'blockchain',
     'dbname'   => 'blockchain',
-    'host'     => 'multichain-mysql.docker',
+    'host'     => 'bc.mysql',
 );
 $isDevMode = true;
 $paths = array("./yml");

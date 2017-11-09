@@ -20,7 +20,7 @@ trait MultichainCommands
      * Connects to the Multichain master node
      */
     protected function connectMultichain(){
-        $this->multichain = new MultichainClient("http://mulichain-master.docker:8000", 'multichainrpc', 'this-is-insecure-change-it', 3);
+        $this->multichain = new MultichainClient("http://bc.masternode:8000", 'multichainrpc', 'this-is-insecure-change-it', 3);
         $this->helper = new MultichainHelper($this->multichain);
     }
 
