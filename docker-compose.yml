@@ -1,8 +1,9 @@
 version: '2'
 
 services:
-    masternode:
+    bc.masternode:
         image: kunstmaan/master-multichain
+        container_name: bc.masternode
         stdin_open: true
         tty: true
         ports:
@@ -23,8 +24,10 @@ services:
             PARAM_ANYONE_CAN_ISSUE: anyone-can-issue|true
             PARAM_ANYONE_CAN_CONNECT: anyone-can-connect|true
             PARAM_ANYONE_CAN_MINE: anyone-can-mine|true
-    slavenode:
+
+    bc.slavenode:
         image: kunstmaan/node-multichain
+        container_name: bc.slavenode
         stdin_open: true
         tty: true
         expose:
@@ -37,13 +40,17 @@ services:
             RPC_USER: multichainrpc
             RPC_PASSWORD: this-is-insecure-change-it
             RPC_ALLOW_IP: 0.0.0.0/0.0.0.0
-            MASTER_NODE: masternode
+            MASTER_NODE: bc.masternode
         links:
-            - masternode
-    explorernode:
+            - bc.masternode
+
+    bc.explorernode:
         image: kunstmaan/explorer-multichain
+        container_name: bc.explorernode
         stdin_open: true
         tty: true
+        ports:
+            - "2750:2750"
         expose:
             - 2750
             - 7447
@@ -55,16 +62,22 @@ services:
             RPC_USER: multichainrpc
             RPC_PASSWORD: this-is-insecure-change-it
             RPC_ALLOW_IP: 0.0.0.0/0.0.0.0
-            MASTER_NODE: masternode
+            MASTER_NODE: bc.masternode
         links:
-            - masternode
-    mysql:
+            - bc.masternode
+
+    bc.php:
+        image: sadokf/php7-nginx-supervisord
+        container_name: bc.php
+        volumes:
+          - ./:/var/www
+
+    bc.mysql:
         image: mysql
+        container_name: bc.mysql
         ports:
-            - "3306:3306"
+            - "3300:3306"
         environment:
-            VIRTUAL_HOST: multichain-mysql.docker
-            VIRTUAL_PORT: 3306
             MYSQL_ROOT_PASSWORD: r00t
             MYSQL_DATABASE: blockchain
             MYSQL_USER: blockchain

@@ -4,8 +4,9 @@ This is the source code for the "Hands on with Multichain" presentation given at
 
 # Usage
 
-1. Install Docker on your machine. I use [Dinghy](https://github.com/codekitchen/dinghy) on OSX. 
+1. Install Docker on your machine.
 1. Clone this repo and cd into it
 1. ./setupEnvironment.sh
 1. ./runExchange.sh
 1. ./runDocument.sh
+1. You can access MultiChain Explorer: [http://localhost:2750/](http://localhost:2750/)

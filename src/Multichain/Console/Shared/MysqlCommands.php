@@ -5,8 +5,6 @@ namespace Multichain\Console\Shared;
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 use Multichain\Console\Entity\Address;
-use Multichain\Console\Entity\Plot;
-use Multichain\Console\Entity\PlotTransaction;
 
 
 trait MysqlCommands
@@ -24,7 +22,7 @@ trait MysqlCommands
             'user'     => 'blockchain',
             'password' => 'blockchain',
             'dbname'   => 'blockchain',
-            'host'     => 'multichain-mysql.docker'
+            'host'     => 'bc.mysql'
         );
         $isDevMode = true;
         $paths = array("./yml/");
